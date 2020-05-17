@@ -64,4 +64,15 @@ fun main(){
 
     ObjectDeclaration.objectMethod("test1-value", "test2-value")
 
+    // if control flow
+    val x = 0
+    val y = 0
+    val ifControlFlow = if (x > y) {
+        print("x > y")
+        x
+    }else {
+        print("else")
+        y
+    }
+
 }
