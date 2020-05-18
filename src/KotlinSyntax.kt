@@ -75,4 +75,32 @@ fun main(){
         y
     }
 
+    var listNumbers = listOf(1,2,3,4,5,6)
+    val firstOrNull = listNumbers.firstOrNull { it > 0}
+    val lastOrNull = listNumbers.lastOrNull() { it > 0}
+    println(firstOrNull)
+    println(lastOrNull)
+
+    //flatMap
+    val flatMapList = listNumbers.flatMap { listOf(it, it) }
+    println(flatMapList)
+
+    //min max
+    val min = listNumbers.min()
+    println(min)
+    println("${listNumbers.min()}")
+
+    val max = listNumbers.max()
+    println(max)
+    println("${listNumbers.max()}")
+
+    var emptyList = emptyList<Int>()
+    println("min: ${emptyList.min()} max:${emptyList.max()}")
+
+    var numbers = listOf(2,3,5,6,4,1)
+    var sorted = numbers.sorted()
+    var inverted = numbers.sortedBy { -it }
+    println("sorted: $sorted")
+    println("inverted $inverted")
+
 }
