@@ -28,6 +28,7 @@ enum class Test {
     TEST2,
     TEST3
 }
+class Test2 (var str1:String, var str2:String)
 
 //object declaration -> cannot assign as expression ->lazy initialization
 object ObjectDeclaration {
@@ -103,4 +104,27 @@ fun main(){
     println("sorted: $sorted")
     println("inverted $inverted")
 
+    //loop break
+    loop1@ for (i in 1..100) {
+        println("i:$i")
+        if (i == 10) {
+            break@loop1
+        }
+    }
+
+    loop2@ for (i in 1..100) {
+        println("i:$i")
+        for (j in 1..100) {
+            print("j:$j")
+            if (j == 10) break@loop2
+        }
+    }
+
+    println()
+
+    //with
+    val test = Test2(str1="test variable1", str2="test variable2")
+    with(test) {
+        println("$str1 $str2")
+    }
 }
