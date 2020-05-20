@@ -127,4 +127,44 @@ fun main(){
     with(test) {
         println("$str1 $str2")
     }
+
+    //for
+    val list1 = listOf("test1", "test2", "test3")
+    for (element in list1) {
+        println("$element")
+    }
+
+    for(i in 1..10) {
+        print(i)
+    }
+    println()
+
+    for(i in 1..10 step 2) {
+        print(i)
+    }
+    println()
+
+    for (i in 10 downTo 1) {
+        print(i)
+    }
+    println()
+
+    for (c in 'a'..'e') {
+        print(c)
+    }
+    println()
+
+    for (c in 'e' downTo 'a' step 2) {
+        print(c)
+    }
+    println()
+
+    val i = 2
+    if (i in 1..10) {
+        print("i is in range from 1 to 10")
+    }
+    println()
+    if (i !in 6..10) {
+        print("i is not in range from 6 to 10")
+    }
 }
