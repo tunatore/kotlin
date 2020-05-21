@@ -167,4 +167,28 @@ fun main(){
     if (i !in 6..10) {
         print("i is not in range from 6 to 10")
     }
+    println()
+
+    val (a, b, c) = arrayOf(2, 5, 10)                              // 1
+    println("$a-$b-$c")
+
+    val map = mapOf("a" to 1, "b" to 2)
+    for ((key, value) in map) {                                      // 2
+        println("$key$value")
+    }
+
+    fun test(a:Int) = if (a > 2) true else false
+    println(test(6))
+
+    data class Test(val str1: String, val str2: String)
+    val testObject = Test("a", "b")
+    val testObject2 = Test("a", "b")
+    println(testObject)
+    println(testObject.str1)
+    println(testObject.str2)
+    println(testObject.hashCode())
+    println("testObject.equals(testObject2):" + testObject.equals(testObject2))
+    println("(testObject == testObject2):" + (testObject == testObject2))
+    println("${testObject.str1}${testObject.str2}")
+
 }
