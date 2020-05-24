@@ -39,4 +39,11 @@ fun main() {
     val multipleBy3 = list.map { it * 3}
     println(multipleBy2)
     println(multipleBy3)
+
+    val listOfNumbers = listOf(1, 2, 3, 4, 5, 6, -1, -2, -3)
+    val evenOddPartitions = listOfNumbers.partition { it % 2 == 0 }
+    val (negatives, positives) = listOfNumbers.partition { it < 0 }
+    println("evenOddPartitions: $evenOddPartitions")
+    println("negatives: $negatives")
+    println("positives: $positives")
 }

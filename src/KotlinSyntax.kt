@@ -198,4 +198,7 @@ fun main(){
     println("(testObject == testObject2):" + (testObject == testObject2))
     println("${testObject.str1}${testObject.str2}")
 
+    println(listNumbers.getOrElse(10) { "not available" })
+    println(map.getOrElse("test", {"10"}))
+
 }
