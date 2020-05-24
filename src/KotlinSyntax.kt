@@ -28,6 +28,12 @@ enum class Test {
     TEST2,
     TEST3
 }
+
+enum class TestEnum (valueString: String) {
+    TEST1 ("TEST1VALUE"),
+    TEST2 ("TEST2VALUE")
+}
+
 class Test2 (var str1:String, var str2:String)
 
 //object declaration -> cannot assign as expression ->lazy initialization
@@ -50,6 +56,7 @@ fun main(){
     val testEnumWhen = when(testEnum) {
         Test.TEST1 -> "TEST1"
         Test.TEST2 -> "TEST2"
+        TestEnum.TEST1 -> "TestEnum.TEST1"
         else -> "Unknown"
     }
     print(testEnumWhen)

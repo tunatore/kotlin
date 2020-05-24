@@ -1,7 +1,5 @@
 class GenericClass<E>(vararg items: E) {
-
     private val set = items.toMutableSet()
-
     fun add(element: E) = set.add(element)
     fun getFirst(): E = set.first()
     fun getLast(): E = set.last()
