@@ -201,4 +201,38 @@ fun main(){
     println(listNumbers.getOrElse(10) { "not available" })
     println(map.getOrElse("test", {"10"}))
 
+    //let
+    fun printNotNull(str: String?) {
+        println("print: \"$str\"")
+        str?.let {
+            println("printing not null:" + it)
+        }
+    }
+    printNotNull("test")
+    printNotNull(null)
+
+    //run
+    fun getStringLength(str: String?): Int? {
+        println("print: \"$str\"")
+        return str?.run {
+            println("isBlank:" + isBlank())
+            println("isEmpty:" + isEmpty())
+            length
+        }
+    }
+    println(getStringLength("test"))
+    println(getStringLength(null))
+
+    //apply
+    data class Person(var name: String, var surname: String, var deptId: Int) {
+        constructor() : this("", "", 0)
+    }
+    val person = Person()
+    val tuna = person.apply {
+        name = "tuna"
+        surname = "tore"
+        deptId = 101
+    }.also {
+        print("name: " + it.name + " surname: " + it.surname + " deptId: " + it.deptId)
+    }
 }
