@@ -1,9 +1,11 @@
-import java.math.BigInteger
-
 val list1: MutableList<Number> = mutableListOf(1,2,3,4,5,6) // mutable list
 val list2 = listOf(1,2,3,4,5,6) // read only list
 val mutableSet: MutableSet<Number> = mutableSetOf(1,2,3,4,5,6) //mutable set
 val mutableMap: MutableMap<Int,Int> = mutableMapOf(1 to 1, 2 to 2, 3 to 3)
+
+data class Person(var name: String, var surname: String, var deptId: Int) {
+    constructor() : this("", "", 0)
+}
 
 fun main() {
 
@@ -46,4 +48,20 @@ fun main() {
     println("evenOddPartitions: $evenOddPartitions")
     println("negatives: $negatives")
     println("positives: $positives")
+
+    val people = listOf(
+            Person("name-test1","surname-test1", 101),
+            Person("name-test2","surname-test2", 102),
+            Person("name-test3","surname-test3", 101),
+            Person("name-test4","surname-test4", 102),
+            Person("name-test5","surname-test5", 101))
+
+    val departmentLastPeopleById = people.associateBy { it.deptId } // last suitable element
+    println(departmentLastPeopleById)
+
+    val departmentPeople = people.groupBy { it.deptId }
+    println(departmentPeople)
+
+    val departmentPeopleBySurname = people.groupBy(Person::deptId, Person::surname)
+    println(departmentPeopleBySurname)
 }
